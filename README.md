@@ -1,2 +1,2 @@
 # rapport-stage
-Rapport de stage de seconde année de BTS
+Un simple portfolio pour un rapport de stage

@@ -1,4 +1,33 @@
-nav.pages{
-    display: flex;
-    gap: 1em;
+:root {
+  --def-padding: 2.5vh 2.5vw;
+}
+
+*::before,
+*::after {
+  margin: inherit;
+  padding: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  padding: var(--def-padding);
+}
+
+nav.pages {
+  display: flex;
+  gap: 1em;
+  padding: var(--def-padding);
+}
+
+header {
+  background-color: #efbb76;
+  padding: 4vh 2vw 0.5rem;
+}
+
+h2,
+p {
+  margin-block-start: 0;
 }

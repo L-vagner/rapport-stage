@@ -1,38 +1,60 @@
-const nav = document.querySelector('nav.pages');
-const root = location.pathname.match(/.*(?<root>rapport-stage)/)[0];
-const isLocal = location.protocol == 'file:';
+const ROOT = location.pathname.match(/.*(?<root>rapport-stage)/)[0];
+const IsLOCAL = location.protocol == 'file:';
+let nav = document.querySelector('nav.pages');
 
-let makeLink = (url, repoDiv) => root + repoDiv + url;
 
-function makeAnchor(anchor) {
-    let a = document.createElement("a");
-    a.className = anchor.name;
-    a.innerText = anchor.text;
+class Anchor {
+    /**
+     * 
+     * @param {string} name Nom de l'élement dans le DOM
+     * @param {string} text Text affiché sur la page
+     * @param {string} href Chemin relatif depuis le répertoire racine du portfolio
+     */
+    constructor(name, text, href) {
+        this.name = name;
+        this.text = text;
+        this.href = href;
+    }
 
-    let div = '';
-    if (isLocal)
-        div = '/';
-    else
-        div = `\u005c`;
-    a.href = makeLink(anchor.href, div);
+    /**
+     * 
+     * @returns {Element} L'élément <a> affiché dans la page
+     */
+    createElement() {
+        let a = document.createElement("a");
+        a.className = this.name;
+        a.innerText = this.text;
+        let div = this.getPathDiv();
+        a.href = this.makeLink(this.href, div);
+        return a;
 
-    return a;
-}
+    }
 
-function Anchor(name, text, href) {
-    this.name = name;
-    this.text = text;
-    this.href = href;
 
-    return makeAnchor(this);
+    /**
+     * 
+     * @returns string
+     */
+    getPathDiv() {
+        let div = '';
+        if (IsLOCAL)
+            div = '/';
+        else
+            div = `\u005c`;
+        return div;
+    }
+
+
+    makeLink(url, repoDiv) {
+        return ROOT + repoDiv + url;
+    };
 }
 
 const pages = [
-    Anchor('index', 'Page d\'introduction', 'index.html'),
-    Anchor('artimbale', 'Introduction artimbale', 'artimbale.html'),
-    Anchor('rapports', 'Rapport hebdomadaire', 'rapports/main.html'),
-    Anchor('scripts', 'Scripts crée pour le rapport de stage', 'scripts/script.html')
+    new Anchor('index', 'Page d\'introduction', 'index.html'),
+    new Anchor('artimbale', 'Introduction artimbale', 'artimbale.html'),
+    new Anchor('rapports', 'Rapport hebdomadaire', 'rapports/main.html'),
+    new Anchor('scripts', 'Scripts crée pour le rapport de stage', 'scripts/script.html')
 ]
-pages.forEach(element => {
-    nav.append(element);
-});
+pages.forEach(object => { nav.append(object.createElement()); }
+);
