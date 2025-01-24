@@ -1,5 +1,6 @@
 :root {
   --def-padding: 2.5vh 2.5vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 *::before,
@@ -14,6 +15,27 @@ body {
 
 main {
   padding: var(--def-padding);
+
+  section {
+    padding-block: 1.5rem;
+    --border: solid #add8e6 2px;
+    border-inline: var(--border);
+    border-block-start: var(--border);
+    padding-inline: 1.2rem;
+
+    &:last-child {
+      border-block-end: var(--border);
+    }
+
+    time {
+      display: block;
+      color: #3763db;
+    }
+
+    img{
+      max-width: 65vw;
+    }
+  }
 }
 
 nav.pages {

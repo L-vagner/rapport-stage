@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rapport Ludovic Vagner</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../scripts/nav.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h2>Journal de bord</h2>
+    </header>
+    <nav class="pages"></nav>
+    <main>
+      <section>
+        <time datetime="01-06">06/01/2025</time>
+        <h2>Analyse des services de OVHCloud</h2>
+        <img src="../images/services_ovh.png" alt="services ovh" />
+        <ul>
+          <li>
+            Offre d'hébergement PRO, 79.08€ par ans HT. Accès SSH, ce qui ne
+            sera peut être pas nécessaire si aucun besoin de s'authentifier pour
+            les utilisateurs.
+          </li>
+          <li>
+            Offre d'hébergement PERSO, 39.48€ par ans HT. Accès FTP qui ne sera
+            sûrement pas utilisée dans tout les cas.
+          </li>
+        </ul>
+        <p>
+          les deux offres ont l'option WordPress en 1 clique, donc peut importe
+          l'offre choisi, il sera possible de créer le site web.
+        </p>
+
+        <h2>Analyse de marché (sites web)</h2>
+        <p>The andsome cafe</p>
+        <img src="../images/andsome_webpage.png" alt="andsome cafe webpage" />
+        <p>Simpliste mais élégant</p>
+        <p>Coffee and plants (la)</p>
+        <img src="../images/c&p_webpage.png" alt="Coffee and plants webpage" />
+        <p>Un brin de folie</p>
+        <img
+          src="../images/brin_folie_webpage.png"
+          alt="brin de folie webpage"
+        />
+        <p>Un bon site sur lequel se baser mais beaucoup de menus.</p>
+        <p>
+          les pages web sont divisées en sous parties afin d'avoir une meilleur
+          structure du site web, chaque sous partie pointe vers une autre page,
+          ce qu'on ne fera peut-être pas.
+        </p>
+        <p>Il faut que je commence a réfléchir a la mise en page.</p>
+        <p>Site avec des OnePagers (site a une page) pour inspiration.</p>
+        <img src="../images/OnePager_webpage.png" alt="OnePager webpage" />
+        <p>A demander si cela convient, et plus d'informations.</p>
+        <p>
+          Utilisation de <a href="https://www.lipsum.com/">Lorem Ipsum</a> pour
+          générer du texte temporaire lors de création de maquette.
+        </p>
+        <p>Avoir moins peur de demander.</p>
+        <img src="../images/first_maquette.png" alt="maquette" />
+        <p>Téléchargé les polices utilisée et la logotheque.</p>
+        <img src="../images/logo_artimbale.png" alt="logo artimbale" />
+        <p>Récupérer Avis Google, lien carte Google Map.</p>
+        <p>
+          Regarder comment faire / si c'est déjà fait sur un plugin WordPress.
+        </p>
+      </section>
+
+      <section>
+        <time datetime="01-07">07/01/25</time>
+        <p>Faire page en construction pour le site.</p>
+        <p>Fait du PIX.</p>
+        <p>
+          Fait 1 exercice de
+          <a href="https://www.theodinproject.com/">Odin projet</a>.
+        </p>
+        <p>FileZilla installé.</p>
+        <p>Refaire installation WordPress manuellement sur le serveur.</p>
+        <p>Utiliser la documentation WordPress pour développer le thème.</p>
+        <h2>Installation manuel de WordPress</h2>
+        <p>
+          Utilise
+          <a
+            href="https://wordetweb.com/word-et-web/WORDPRESS-guide-installation-de-WordPress-premier-domaine-chez-OVH-FR.htm"
+            >ce guide</a
+          >
+          pour installation sur OVH.
+        </p>
+        <p>Sauvegarde des identifiants dans un coffre-fort de mot de passe.</p>
+        <p>
+          Site crée:
+          <img src="../images/page_admin_wp.png" alt="page admin wordpress" />
+        </p>
+        <p>
+          Changement du préfixe dans la base de données, admin perds ces droits
+          <img src="../images/page_index_wp.png" alt="page index wordpress" />
+          <img
+            src="../images/page_erreur_access_wp.png"
+            alt="page erreur acces wordpress"
+          />
+        </p>
+        <p>
+          Retour en arrière sur le manipulations, utilisation du plugin
+          <a href="https://wordpress.org/plugins/brozzme-db-prefix-change/">
+            Brozzme DB Prefix & Tools Addons
+          </a>
+          pour effectuer le changement.
+        </p>
+        <p>
+          Changement de l'icon du site, en attente de son apparition sur le
+          site.
+        </p>
+      </section>
+
+      <section>
+        <time datetime="01-08">08/01/2025</time>
+        <p>Loupé réveil ce matin, arrivé une dizaine de minutes en retard.</p>
+        <p>
+          Installation <a href="https://fr.wikipedia.org/wiki/LAMP">LAMP</a> sur
+          mon ordinateur portable pour créer un environnement de développement.
+        </p>
+        <p>Difficulté d'effectuer l'installation pour près de 2 heures.</p>
+        <p>1 heure de plus pour installer wordpress sur lamp.</p>
+        <p>
+          Appris un peu de gestion de permissions de fichier
+          <a
+            href="https://www.softwaretestinghelp.com/unix-file-access-permissions/"
+          >
+            (chmod, chown, chgrp )</a
+          >, raison: simplifier le developpement sur l'environnement local en
+          supprimant la nécessité d'avoir les permissions suffisant
+        </p>
+
+        <h4>NE PAS OUBLIER A CHANGER LORS DU TRANSFERT</h4>
+
+        <p>
+          Ludivine m'a dit de tenter plein de chose tant que c'est le début du
+          stage, créer son propre thème wordpress, plugin?
+        </p>
+        <p>
+          Lecture du
+          <a href="https://developer.wordpress.org/themes/">theme handbook</a>
+          de wordpress pour créer theme perso
+        </p>
+      </section>
+      <section>
+        <time datetime="01-09">09/01/2025</time>
+        <p>Continue lecture handbook, création d'un thème</p>
+        <img src="../images/theme_artimbale.png" alt="theme artimbale" />
+        <p>
+          Ajout d'une police utilisée par artimbale, problème dans la coloration
+        </p>
+        <img src="../images/code_police.png" alt="Code de police" /><img
+          src="../images/police_non_coloré.png"
+          alt="Police non coloré"
+        />
+        <p>Corrigé le problème en changeant le fichier utilisé</p>
+        <img src="../images/police_coloré.png" alt="Police coloré" />
+        <p>Création de tailles</p>
+        <p>Ajout d'une seconde police pour le texte du site</p>
+        <p>
+          Création de
+          <a
+            href="https://developer.wordpress.org/themes/templates/template-parts/"
+            >template part</a
+          >
+          en suivant le handbook .
+        </p>
+
+        <p>
+          Regarder les droits copyright des polices en plus de détails demain.
+        </p>
+        <p>Apprendre les patterns demain.</p>
+      </section>
+
+      <section>
+        <time datetime="01-10">10/01/2025</time>
+        <p>Ajoute mode développement sur wordpress local/lamp</p>
+        <p>Problème a ajouter des patterns sur lamp</p>
+        <p>Création de catégorie de patterns</p>
+        <img src="../images/code_cat_pattern.png" alt="code catégorie pattern" />
+        <p>Le bloc core media-text est impossible à pré-configurer.</p>
+        <p>Créer un pattern pour chaque section.</p>
+        <p>Créer un pattern pour les posts</p>
+        <p>J'ai réussi a pré-configurer le bloc core media-text.</p>
+        <img src="../images/code_config_media_text.png" alt="code block core media-text" />
+      </section>
+
+      <section>
+        <time datetime="01-13">13/01/2025</time>
+        <p>Confirmation de sections désirées et création de maquette.</p>
+        <ul>
+          <li>Présentation / Histoire</li>
+          <li>Café (menu, photo)</li>
+          <li>Bazar (photo objets)</li>
+          <li>Herboristerie</li>
+          <li>Agenda</li>
+          <li>Contact, emplacement</li>
+        </ul>
+        <img src="../images/maquette_present.png" alt="maquette présentation" />
+        <img src="../images/maquette_cafe.png" alt="maquette café" />
+        <img src="../images/maquette_bazar.png" alt="maquette bazar" />
+        <p>
+          Se baser sur un calendrier papier pour l'agenda? ( choix par mois ou
+          semaine), chaque semaine prend une ligne de lundi a dimanche.
+        </p>
+        <p>Comment le mettre à jour est aussi un problème.</p>
+        <img src="../images/maquette_agenda.png" alt="maquette agenda" />
+      </section>
+
+      <section>
+        <time datetime="01-14">14/01/2025</time>
+        <p>Demandée avis sur maquette des sections.</p>
+        <p>Commencée rapport de stage sur site hébergé par Git Hub.</p>
+        <p>
+          Problème avec la programmation du rapport de stage, backslash
+          s'échappe mal dans la console mais correctement dans l'exécution.
+        </p>
+        <p>Création d'une maquette pour le rapport de stage.</p>
+        <img src="../images/maquette_rapport.png" alt="maquette rapport de stage" />
+        <p>
+          Après vu ensemble avec Gaëlle et Ludivine, enlever l'arrière plan
+          coloré en préférence, donnée plusieurs site a utiliser pour
+          inspiration, re-touche des maquettes.
+        </p>
+        <p>
+          Accepté pour la plupart, possiblement images de tailles différentes
+          pour le bazar.
+        </p>
+        <p>
+          Retour sur le developpement de theme wordpress pour la section/paterne
+          histoire
+        </p>
+      </section>
+
+      <section>
+        <time datetime="01-15">15/01/2025</time>
+        <p>
+          Toujours en train de développer le thème, réussi a mettre en place la
+          taille du contenu mais ne comprends pas encore comment aligner le
+          texte a gauche.
+        </p>
+        <p>J'ai trouvé, je suis un abruti!</p>
+        <p>Il suffit d'ajouter du padding horizontale au bloque conteneur.</p>
+        <img src="../images/padding_block.png" alt="padding block" />
+        <p>Création de padding custom.</p>
+        <p>
+          Trouvé comment créer des éléments sections avec des bloques conteneur,
+          certain ont l'option:
+        </p>
+
+        <pre>HTML element.</pre>
+        <p>
+          Cette option permet de choisir quelle éléments va être crée dans le
+          DOM.
+        </p>
+        <p>
+          Recherche de documentation sur les bloques de wordpress pour savoir
+          lequel utilisé pour créer une gallerie d'article.
+        </p>
+        <p>
+          Le loop wordpress, il est a utiliser dans la page template désirées.
+        </p>
+        <p>Prototype du loop qui sera utilisée:</p>
+        <img src="../images/code_loop_initial.png" alt="code loop initial" />
+        <p>Résultat:</p>
+        <img src="../images/resultat_loop.png" alt="résultat loop" />
+        <p>On a des posts!</p>
+        <p>
+          Il faudra voir pour créer un paternes de postes pour simplifier
+          l'ajout de nouveau postes si possible.
+        </p>
+        <p>
+          Trouvé un thread wordpress qui sera sûrement amplement suffisant pour
+          créer la fonctionnalité ("vol" de code) mais je désire comprendre le
+          code donc il semble que je vais devoir lire la documentation pour les
+          plugins, jusqu'au moins a la partie «hooks».
+        </p>
+      </section>
+
+      <section>
+        <time datetime="01-16">16/01/2025</time>
+        <p>
+          Pour créer un pattern, j'insère le pattern dans la page index, je le
+          modifie avec l'éditeur en ligne, puis je copie le code de la page pour
+          le pattern et le copie dans le fichier du pattern.
+        </p>
+        <p>Création d'un plugin de base / test:</p>
+        <img src="../images/plugin.png" alt="plugin apparait dans page admin" />
+        <p>
+          Les plugins permet de créer des nouveaux «type» de post, séparé des
+          posts de base wordpress
+        </p>
+        <img src="../images/type_custom.png" alt="type post custom" />
+        <p>Cela peut être utile pour le loop.</p>
+        <p>
+          Création d'un
+          <a href="https://fr.wikipedia.org/wiki/Lien_symbolique">symlink</a>
+          pour enregistrer le plugin dans le git du thème.
+        </p>
+        <p>
+          (expliquer chaque concept comme symlink ou plugin dans le rapport de
+          stage).
+        </p>
+        <p>
+          Ajoute de licence GPL au plugin et au thème (aucune idée comment le
+          faire proprement mais j'ai essayé au moins)
+        </p>
+        <p>
+          Sûrement ajouter les types customs au thème pour simplifier la
+          migration (en + je compte utilisé les posts custom pour les loops donc
+          ils sont nécessaire au bon fonctionnement du thème).
+        </p>
+        <p>
+          Possiblement utilisé le thème pour créer des types de posts et créer
+          un plugin pour créer des carrousel (ligne d'objets, dans ce cas des
+          posts), je peut donc diviser les fichiers entre l'apparence et la
+          fonctionnalité.
+        </p>
+        <p>Dépanner imprimante wifi quand possible.</p>
+        <p>
+          Télétravail l'après-midi car je suis juste en train de lire la
+          documentation sur les plugins, ce qui ne nécessite pas d'être présent
+          pour le faire.
+        </p>
+        <p>
+          Je ne pense pas que le plugin nécessite un menu mais on pourra en
+          parler demain.
+        </p>
+        <p>Peut être un shortcode?</p>
+        Sections du
+        <a href="https://developer.wordpress.org/plugins/">handbook</a> vue:
+        <ul>
+          <li>Administration, l'endroit pour les paramètres du plugin</li>
+          <li>
+            shortcode, une balise qui exécute du code PHP, peut accepter des
+            paramètres/arguments.
+          </li>
+          <li>
+            Metadata, utilisé pour identifier des informations sur le post,
+            possiblement utile, mais je n'en suis pas sûr.
+          </li>
+          <li>
+            Custom post types, les postes customisé, on doit les enregistrer
+            pour les utiliser. Il faut ajouter les types custom manuellement a
+            la query de wordpress.
+          </li>
+          <li>
+            Taxonomy, utilisé pour organiser des données, sûrement plus utile
+            dans notre cas que les metadatas.
+          </li>
+          <li>
+            Utilisateurs, explique des informations concernant les utilisateurs.
+          </li>
+          <li>Ne sera pas utilisé car non pertinent!</li>
+          <li>
+            JavaScript, démontre les différentes bibliothèques compris dans
+            l'installation de wordpress, notamment jQuery.
+          </li>
+          <li>
+            Cron, permet de programmer des taches, sera sûrement utilisé pour
+            mettre a jour les informations récupéré d'Instagram.
+          </li>
+        </ul>
+        <p>
+          Réussi a modifier la query pour récupérer les posts du type café que
+          j'avais crée plus tôt.
+        </p>
+        <p>
+          Voir demain pour l'idée des taxonomies, puis l'affichage des posts
+          dans les patterns.
+        </p>
+      </section>
+
+      <section>
+        <time datetime="01-17">17/01/2025</time>
+        <p>
+          Modification du type custom pour obtenir un résultat plus spécifique.
+        </p>
+        <p>
+          Corrigé erreur dans menu admin où les postes de différents types
+          s'affichait ensemble, c'est car l'action pre_get_posts est utilisé
+          pour tout appele de posts, donc quand le menu appelait des posts pour
+          afficher le cpt, l'action s'activait, et donc les modifications que
+          j'avais effectuées se lançait, il a fallu ajouter un test pour
+          s'assurer que l'action n'est pas appelé depuis un menu admin.
+        </p>
+        <p>Avis: a voir avec ludivine</p>
+        <p>
+          Ajouté des posts dans le type café, ils apparaissent dans le loop.
+        </p>
+        <p>
+          Mal compris les pages templates, inutilisable avec les blocs? Bref,
+          je n'arrive pas a les faire marcher.
+        </p>
+        <p>
+          Je peux créer dans le plugin des paramètres pour choisir le post qui
+          contient le template, puis après mettre a jour le contenu quand un
+          nouveau post du même type est crée, c'est a dire automatiquement
+          préparér la création de postes custom.
+        </p>
+        <p>
+          Pour créer un scroll infinie, on pourrait utiliser une fonction
+          javascript
+        </p>
+        <p>Regarder les paramètres du bloque scroll query.</p>
+        <p>
+          Tenté d'utilisé query vars comme la documentation l'explique, mais ça
+          ne marche pas comme expliqué et sont efficacement inutilisable pour ce
+          que je désire.
+        </p>
+      </section>
+
+      <section>
+        <time datetime="01-20">20/01/2025</time>
+        <p>
+          Continue d'essayer de modifier le query a l'exécution avec des actions
+          wordpress, si je n'arrive pas je coderais directement dans le pattern.
+        </p>
+        <p>
+          Suivi du block editor handbook pour créer un variation du bloque query
+          loop.
+        </p>
+        <p>
+          Ça à l'air bien trop compliqué et trop spécifique pour 2 utilisations,
+          je vais donc juste écrire directement la requête dans les paternes.
+        </p>
+        <p>Écriture du second pattern.</p>
+        <p>
+          Mise en page des patterns, la barre de défilement est superposé aux
+          éléments.
+        </p>
+        <p>Erreur trouve: Typo dans le nom de la variable</p>
+        <img src="../images/typo_variable.png" alt="le coupable a été trouvé" />
+        <p>manque un «-» entre wp et preset:</p>
+        <p>typo correct:</p>
+        <pre>--wp--preset--spacing--small</pre>
+        <p>
+          Liste de prix pour cafés/consommation, puis afficher certains
+          produits/consommation sans les prix.
+        </p>
+        <p>Page admin pour les prix avec du PHP et un formulaire?</p>
+        <p>
+          Pour les carrousel: afficher le titre du post quand l'image est
+          survolé?
+        </p>
+      </section>
+
+      <section>
+        <time datetime="01-21">21/01/2025</time>
+        <p>
+          Plugin va créer une option pour ajouter des prix a des postes, puis
+          créer un bloque ou un pattern pour l'afficher.
+        </p>
+        <p>Quelque problème causé par un erreur de frappe.</p>
+        <p>
+          Travail pour le moment: créer plugin pour prix et mise en page du
+          menu.
+        </p>
+        <p>
+          Création d'une table de données si elle n'existe pas lors de
+          l'activation du plugin.
+        </p>
+        <img src="../images/code_creation_table.png" alt="code création table" />
+        <p>
+          Recherche d'un mot spécifique pour base de données, 10 minutes pour
+          trouver:
+        </p>
+
+        <h4>«devise»</h4>
+        <p>
+          Lu de la documentation MySQL pour attribuer le bon charset a la table.
+        </p>
+        <p>
+          Mal compris plusieurs fois l'utilité des nonces, ils sont a utilisé
+          pour protéger au attaques de site externes spécifiquement.
+        </p>
+        <p>Demander a Ludivine et Gaêlle de décrire la boutique.</p>
+        <p>Pointer vers une annonce ulule sauvegardé dans mes favoris.</p>
+        <p>
+          Problème a utiliser une fonction, il faut inclure un ficher pour
+          l'utiliser.
+        </p>
+        <p>
+          Bloqué 1 ou 2 heures sur les message d'admin, réussi au final de faire
+          apparaître le message.
+        </p>
+      </section>
+
+      <section>
+        <time datetime="01-22">22/01/2025</time>
+        <p>Utilisation du message d'admin pour tester les variables.</p>
+        <img src="../images/deug_message_admin.png" alt="debug avec message admin" />
+        <p>Récupération des différents types de postes.</p>
+        <p>
+          Regarder dans le handbook api / plugin pour la création d'un menu
+          d'options.
+        </p>
+        <p>Champ option crée dans la base de données.</p>
+        <img src="../images/option_sauvegardé.png" alt="option sauvegardé dans la bdd" />
+        <p>
+          Difficulté a utiliser des fonctions de classe a l'intérieur d'une
+          autre fonction de la classe
+        </p>
+        <p>Trouvé 2 méthode:</p>
+        <ol>
+          <li>
+            <p>
+              J'utilise la fonction d'instanciation de la classe que je store
+              dans une variable, puis utilise la fonction depuis la variable.
+            </p>
+            <p>
+              Très moche, et effectue l'équivalent de la seconde méthode mais
+              depuis la classe elle même donc un peu plus dur a suivre.
+            </p>
+            <p>
+              La raison pourquoi il est obligé d'utiliser l'instanciation et non
+              simplement la pseudo-variable $this est car la méthode est
+              statique et donc peut-être appelé hors d'un objet.
+            </p>
+            <img src="../images/fonction_statique_problematique.png" alt="la fonction statique problèmatique" />
+          </li>
+          <li>
+            J'enlève la méthode de statique, elle doit donc être forcement
+            exécuté depuis un objet et la pseudo-variable fonctionne
+            correctement. Cela permet un meilleur suivi dans le code principal
+            et rend la fonction plus lisible.
+          </li>
+        </ol>
+        <p>
+          Création du formulaire d'option, la page fonctionne mais est vide.
+        </p>
+        <p>Recu mail pour les consignes du suivi du stage.</p>
+        <p>Portfolio sur GitHub vendredi.</p>
+        <p>59, avenue Félix Faure 69003, Lyon.</p>
+        <p>Je n'arrive pas a faire afficher le menu d'options.</p>
+        <p>
+          Après 1 heure, erreur trouvé: la fonction do_settings_sections()
+          demande le nom de la page de paramètre pour afficher ses sections,
+          l'article que je suivait pour créer cette page de paramètre a utiliser
+          le même nom pour la page et la section, j'ai donc ajouté le nom de la
+          section a la fonction.
+        </p>
+        <img src="../images/fonction_mal_explique.png" alt="une fonction avec une signature mal expliqué" />
+        <p>
+          Si wordpress avait des nom plus intelligents, j'aurai pu deviner plus
+          tôt que la fonction qui parle de sections au pluriel n'attend pas le
+          nom d'une section et potentiellement d'autre paramètre, mais le nom de
+          la page, C'est a dire: la signature que je voyais:
+        </p>
+        <pre>do_settings_sections(string $section, string[] …)</pre>
+        <p>La vrai signature:</p>
+        <pre>do_settings_sections(string $page)</pre>
+        <p>
+          Mais bon, je suis la personne qui a présupposé que tout les noms de
+          fonction serait utiles pour connaître la signature attendu.
+        </p>
+        <p>
+          Le début de la page est là mais logiquement, rien ne se sauvegarde car
+          pas encore mis en place.
+        </p>
+      </section>
+
+      <section>
+        <time datetime="01-23">23/01/2025</time>
+        <p>Ajout de la sauvegarde du formulaire.</p>
+        <p>Problème avec la récupération de types de postes.</p>
+        <p>
+          Trouvé une partie de problème, le code d'ajout de types de postes
+          s'exécutait des fois plus tard que l'enregistrement dans les
+          paramètres, cela est corrigé en augmentant la priorité de la création
+          de type et diminuant celle de la création de paramètres.
+        </p>
+        <img src="../images/fonction_prio_reduit.png" alt="la fonction paramètre avec sa priorité réduite" />
+        <p>
+          Problème dans l'affichage de la page de paramètres, corrigé en
+          transformant la boucle
+        </p>
+        <pre>
+( foreach … as $value ) = = = > ( foreach … as $key => $value )</pre
+        >
+        <img src="../images/affichage_bugge.png" alt="l'affichage buggé" /><img
+          src="../images/affichage_normal.png"
+          alt="l'affichage fonctionnel"
+        />
+        <p>
+          Les champs se mettent à jour en fonction des valeurs dans la base de
+          données.
+        </p>
+        <img
+          src="../images/formulaire-1.png"
+          alt="le formulaire avec les champs, l'un des champs checkbox est déjà coché car vrai dans la bdd"
+        />Modification
+        <img src="../images/formulaire-2.png" alt="Changement des champs dans la base de données" /><img
+          src="../images/formulaire-3.png"
+          alt="le formulaire, avec les champs mis à jour"
+        />
+        <p>Il ne manquent plus que la sauvegarde grâce au formulaire.</p>
+        <p>Complication avec la mise à jour dynamique des données.</p>
+        <p>
+          Après facilement 2 heures, j'ai finalement réussi à aplatir la table
+          utilisé pour les champs, et oublié de manger a midi.
+        </p>
+        <p>
+          La table récupéré est 2 dimensionel à cause de la fonction utilisé
+          pour comparér les valeurs, il faut donc la rendre 1 dimensionel pour
+          l'enregistrer correctement dans la base de données.
+        </p>
+        <img
+          src="../images/fonction_flatten.png"
+          alt="fonction qui met a jour les champs dynamiquement, avec la fonction pour applatir la table"
+        />
+        <p>
+          La mise à jour automatique du formulaire fonctionne! (avant la mise à
+          jour ne s'effectuait pas et il était impossible de l'utiliser pour
+          détecter des nouvelle types de postes sans casser.)
+        </p>
+        <p>Le résultat dans le code est moche mais fonctionnel.</p>
+        <p>
+          Ça me dérange, mais je doit le laisser pour m'occuper de choses plus
+          importantes.
+        </p>
+        <p>
+          A cause de la moins que parfaite documentation de wordpress, j'ai
+          essayé de mettre en place une vérification de nonce alors que la
+          fonction settings fields s'en occupait déjà.
+        </p>
+        <p>Le code d'activation du plugin ne fonctionne plus, pourquoi?</p>
+        <p>
+          WordPress, le seul framework qui arrive subitement à se casser sans
+          explications.
+        </p>
+        <pre>do_action(‘init')</pre>
+        <p>S'execute avant</p>
+        <pre> register_activation_hook()</pre>
+        <p>
+          Il était donc impossible d'attacher une fonction au hook init lors de
+          l'activation du plugin, car l'activation s'appele après init
+          uniquement lors de l'activation.
+        </p>
+        <pre>new WPSP_Activator = = = > WPSP_Activator::activate()</pre>
+      </section>
+
+      <section>
+        <time datetime="01-24">24/01/2025</time>
+        <p>Télé travail pour préparer le portfolio.</p>
+        <p>Script pour la navigation crée, a tester sur le serveur hôte.</p>
+        <p>Ça fonctionne!</p>
+        <p>
+          Complication a utiliser git, après quelque manipulation, finalement
+          crée des branches plus propre.
+        </p>
+        <img
+          src="../images/git_source_control.png"
+          alt="git source control graph"
+        />
+      </section>
+    </main>
+  </body>
+</html>
