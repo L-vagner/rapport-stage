@@ -32,7 +32,7 @@ main {
       color: #3763db;
     }
 
-    img{
+    img {
       max-width: 65vw;
     }
   }
@@ -52,4 +52,13 @@ header {
 h2,
 p {
   margin-block-start: 0;
+}
+
+.raw-code {
+  background-color: #000;
+  color: #fff;
+
+  .class {
+    color: #dada33;
+  }
 }

@@ -181,12 +181,18 @@
         <p>Ajoute mode développement sur wordpress local/lamp</p>
         <p>Problème a ajouter des patterns sur lamp</p>
         <p>Création de catégorie de patterns</p>
-        <img src="../images/code_cat_pattern.png" alt="code catégorie pattern" />
+        <img
+          src="../images/code_cat_pattern.png"
+          alt="code catégorie pattern"
+        />
         <p>Le bloc core media-text est impossible à pré-configurer.</p>
         <p>Créer un pattern pour chaque section.</p>
         <p>Créer un pattern pour les posts</p>
         <p>J'ai réussi a pré-configurer le bloc core media-text.</p>
-        <img src="../images/code_config_media_text.png" alt="code block core media-text" />
+        <img
+          src="../images/code_config_media_text.png"
+          alt="code block core media-text"
+        />
       </section>
 
       <section>
@@ -220,7 +226,10 @@
           s'échappe mal dans la console mais correctement dans l'exécution.
         </p>
         <p>Création d'une maquette pour le rapport de stage.</p>
-        <img src="../images/maquette_rapport.png" alt="maquette rapport de stage" />
+        <img
+          src="../images/maquette_rapport.png"
+          alt="maquette rapport de stage"
+        />
         <p>
           Après vu ensemble avec Gaëlle et Ludivine, enlever l'arrière plan
           coloré en préférence, donnée plusieurs site a utiliser pour
@@ -393,8 +402,8 @@
           Ajouté des posts dans le type café, ils apparaissent dans le loop.
         </p>
         <p>
-          Mal compris les pages templates, inutilisable avec les blocs? Bref,
-          je n'arrive pas a les faire marcher.
+          Mal compris les pages templates, inutilisable avec les blocs? Bref, je
+          n'arrive pas a les faire marcher.
         </p>
         <p>
           Je peux créer dans le plugin des paramètres pour choisir le post qui
@@ -464,7 +473,10 @@
           Création d'une table de données si elle n'existe pas lors de
           l'activation du plugin.
         </p>
-        <img src="../images/code_creation_table.png" alt="code création table" />
+        <img
+          src="../images/code_creation_table.png"
+          alt="code création table"
+        />
         <p>
           Recherche d'un mot spécifique pour base de données, 10 minutes pour
           trouver:
@@ -493,14 +505,20 @@
       <section>
         <time datetime="01-22">22/01/2025</time>
         <p>Utilisation du message d'admin pour tester les variables.</p>
-        <img src="../images/deug_message_admin.png" alt="debug avec message admin" />
+        <img
+          src="../images/deug_message_admin.png"
+          alt="debug avec message admin"
+        />
         <p>Récupération des différents types de postes.</p>
         <p>
           Regarder dans le handbook api / plugin pour la création d'un menu
           d'options.
         </p>
         <p>Champ option crée dans la base de données.</p>
-        <img src="../images/option_sauvegardé.png" alt="option sauvegardé dans la bdd" />
+        <img
+          src="../images/option_sauvegardé.png"
+          alt="option sauvegardé dans la bdd"
+        />
         <p>
           Difficulté a utiliser des fonctions de classe a l'intérieur d'une
           autre fonction de la classe
@@ -521,7 +539,10 @@
               simplement la pseudo-variable $this est car la méthode est
               statique et donc peut-être appelé hors d'un objet.
             </p>
-            <img src="../images/fonction_statique_problematique.png" alt="la fonction statique problèmatique" />
+            <img
+              src="../images/fonction_statique_problematique.png"
+              alt="la fonction statique problèmatique"
+            />
           </li>
           <li>
             J'enlève la méthode de statique, elle doit donc être forcement
@@ -544,7 +565,10 @@
           le même nom pour la page et la section, j'ai donc ajouté le nom de la
           section a la fonction.
         </p>
-        <img src="../images/fonction_mal_explique.png" alt="une fonction avec une signature mal expliqué" />
+        <img
+          src="../images/fonction_mal_explique.png"
+          alt="une fonction avec une signature mal expliqué"
+        />
         <p>
           Si wordpress avait des nom plus intelligents, j'aurai pu deviner plus
           tôt que la fonction qui parle de sections au pluriel n'attend pas le
@@ -574,7 +598,10 @@
           paramètres, cela est corrigé en augmentant la priorité de la création
           de type et diminuant celle de la création de paramètres.
         </p>
-        <img src="../images/fonction_prio_reduit.png" alt="la fonction paramètre avec sa priorité réduite" />
+        <img
+          src="../images/fonction_prio_reduit.png"
+          alt="la fonction paramètre avec sa priorité réduite"
+        />
         <p>
           Problème dans l'affichage de la page de paramètres, corrigé en
           transformant la boucle
@@ -594,7 +621,10 @@
           src="../images/formulaire-1.png"
           alt="le formulaire avec les champs, l'un des champs checkbox est déjà coché car vrai dans la bdd"
         />Modification
-        <img src="../images/formulaire-2.png" alt="Changement des champs dans la base de données" /><img
+        <img
+          src="../images/formulaire-2.png"
+          alt="Changement des champs dans la base de données"
+        /><img
           src="../images/formulaire-3.png"
           alt="le formulaire, avec les champs mis à jour"
         />
@@ -657,6 +687,274 @@
           src="../images/git_source_control.png"
           alt="git source control graph"
         />
+      </section>
+      <section>
+        <time datetime="01-27">27/01/2025</time>
+        <p>
+          Correction d'une petite erreur d'affichage dans le formulaire
+          d'options.
+        </p>
+        <p>Difficulté avec la sauvegarde.</p>
+        <p>
+          Pense avoir trouvé la raison pourquoi la sauvegarde ne fonctionne pas?
+        </p>
+        <img
+          src="../images/signature_register_setting.png"
+          alt="Signature de register_setting"
+        />
+        <img
+          src="../images/description_option_name.png"
+          alt="Définition de option_name"
+        />
+        <p>
+          Ceci est très literal: Si le nom donnée n'est pas dans la base de
+          données, rien ne change.
+        </p>
+        <p>A nouveau, la documentation wordpress n'a pas été assez précis.</p>
+        <p>Maintenant il faut que je fasse que ça fonctionne.</p>
+        <p>Réussi a collecter les champs qui sont activé:</p>
+        <img
+          src="../images/image_parametre_fonctionnel.png"
+          alt="image paramètres fonctionnel"
+        />
+        <img
+          src="../images/sanitize_debug_initial.png"
+          alt="sanitize types debug"
+        />
+        <p>
+          Bon, il est vrai que le code n'utilise pas exactement le
+          fonctionnement de register setting (renvoie l'input liée par nom à la
+          fonction sanitize défini dans ses paramètres, dans mon cas je récupère
+          mes input depuis $_POST directement) mais si ça fonctionne ...
+        </p>
+        <img
+          src="../images/sanitize_types_function.png"
+          alt="fonction sanitize type"
+        />
+        <p>
+          rubber duck debug: Maintenant que j'ai les valeurs activés, je veux
+          les convertir en bool vrai puis mettre a jour la table d'options
+          associée. Je sais que la table d'option contient une table avec les
+          clés en string et valeur en bool: 0 | 1. je pourrais récupérer chaque
+          clées de la table et mettre les nouvelles valeurs: si j'ai la clé dans
+          mon input, alors l'option associées est vrai, sinon elle est fausse.
+        </p>
+        <table>
+          <tr>
+            <td></td>
+            <td>Option activé</td>
+            <td>Option désactivé</td>
+          </tr>
+          <tr scope="row">
+            <td>Input activé/ présent</td>
+            <td>Aucun changement</td>
+            <td>Option s'active</td>
+          </tr>
+          <tr scope="row">
+            <td>Input désactivé/ absent</td>
+            <td>Option se désactive</td>
+            <td>Aucun changement</td>
+          </tr>
+        </table>
+        Transformation en bool fonctionnel
+        <img
+          src="../images/bool_sanitize_type.png"
+          alt="transformation en bool dans fonction sanitize debug"
+        />
+        <img
+          src="../images/sanitize_type_debug.png"
+          alt="Debug sanitize types"
+        />
+        <p>
+          (le vide après «[...] =>» dans le second Array est en fait la valeur
+          faux, qui n'est pas pris en compte par print_r et donc n'apparaît
+          pas.)
+        </p>
+        <p>
+          La sauvegarde de valeur vrai fonctionne mais oublié de codé la
+          sauvegarde de valeur fausse. Trompé dans le nom d'une variable oops.
+        </p>
+        <p>Sauvegarde fonctionne.</p>
+        <img
+          src="../images/converissement_array_entree.png"
+          alt="Convertissement dans un array de valeur entrée"
+        />
+        <p>
+          En utilisant array_merge, j'écrase les valeurs sauvegardé par celle
+          données dans le formulaire.
+        </p>
+        <p>
+          Utilisation de fonctions pour vérifier les valeurs, trouvé les
+          fonctions php mb (multi-byte) sur un formulaire stack overflow.
+        </p>
+        <img
+          src="../images/verification_mb_strlen.png"
+          alt="Vérification du caractère entrée avec mb_strlen"
+        />
+        <p>Résultat: tout fonctionne comme prévu.</p>
+        <img
+          src="../images/option_sauvegarde_bdd.png"
+          alt="Image options sauvegardé dans bdd"
+        />
+        <img
+          src="../images/sauvegarde_bdd_1.png"
+          alt="Exemple sauvegarde formulaire 1"
+        />
+        <img
+          src="../images/sauvegarde_bdd_2.png"
+          alt="Exemple sauvegarde formulaire 2"
+        />
+        <img
+          src="../images/sauvegarde_bdd_3.png"
+          alt="Exemple sauvegarde formulaire 3"
+        />
+      </section>
+      <section>
+        <time datetime="01-28">28/01/2025</time>
+        <p>
+          Tentative de création d'un titre pour la section devise afin d'avoir
+          une description des limitations de l'entrée (1 caractère)
+        </p>
+        <p>
+          Distrait par création d'une classe pour séparer la gestion des types
+          custom a utiliser et le menu de paramètres, sûrement crée une autre
+          classe pour la gestion des prix.
+        </p>
+        <img
+          src="../images/formulaire_parametre_complet.png"
+          alt="formulaire de paramètres complet"
+        />
+        <p>Menu de paramètres finalisé, a demander avis.</p>
+        <p>
+          Le formulaire se met a jour correctement si les valeurs sont modifié
+          directement dans la bdd, je peut donc enlever le code qui me
+          perturbait dans ma classe.
+        </p>
+        <img src="../images/fonction_supprime.png" alt="fonction supprimé" />
+        <p>Au revoir!</p>
+        <p>Je vais séparer la classe des paramètres et la classe des prix.</p>
+        <p>
+          Le menu n'apparaît pas si l'utilisateur n'a pas le permissions de
+          modifier les options, mais je voudrais que les éditeurs puissent
+          accéder au prix, je vais donc inverser l'appel (prix crée le menu et
+          settings crée un sous-menu).
+        </p>
+        <p>10 minutes perdu car l'action est attaché au mauvais hook.</p>
+        <p>
+          Je vais devoir crée ma page de prix manuellement car je ne peux
+          utiliser la fonction register_setting (elle enregistre les valeurs
+          données dans la table option de la bdd, je veux enregistrer dans la
+          table simpleprices)
+        </p>
+        <p>Je peux ajouter le nonce directement dans le formulaire.</p>
+        <p>
+          Je pense que je vais essayer de trouver un tuto pour une création de
+          formulaire sans l'api settings afin de comprendre comment le faire,
+          d'abord chercher un tuto sur web, puis vidéo si je ne trouve pas.
+        </p>
+        <p>
+          trouvé un
+          <a href="https://wpshout.com/wordpress-options-page/">tuto / blog</a>
+        </p>
+        <p>
+          Quelque complications: quand j'ouvre la page pour la première fois, le
+          nonce n'est pas établie, et donc la page ne s'exécute pas.
+        </p>
+        <img
+          src="../images/fonction_nonce_trop_tot.png"
+          alt="fonction de nonce qui s'éxécute trop tôt"
+        />
+        <img
+          src="../images/exemple_erreur_nonce.png"
+          alt="exemple d'erreur du nonce, la page est bloqué car le nonce n'est pas vérifié"
+        />
+        <p>
+          Je pense que j'ai l'erreur, je fais le contrôle du nonce dans la
+          fonction qui s'occupe de l'affichage de la page, je devrait séparer
+          l'affichage et le contrôle, mais comment?
+        </p>
+        <p>
+          Après un peu de recherche, trouvé que c'est bien l'erreur, mais aussi
+          que comme la fonction est déclaré par wordpress, le formulaire
+          s'exécute avant et la fonction wp_verify_nonce n'est pas encore
+          déclaré.
+        </p>
+        <p>
+          J'ai donc ajouté la vérification a une fonction que j'attache a init.
+        </p>
+        <img
+          src="../images/ajout_action_init.png"
+          alt="ajout d'une action a init"
+        />
+        <img
+          src="../images/fonction_attache.png"
+          alt="fonction attaché a init"
+        />
+        <p>
+          Je veux récupérer tout les postes qui contient un type activé, il faut
+          donc que je récupère les options du plugin, gardent uniquement les
+          types qui ne sont pas 0, puis renvoyer un table des postes qui
+          appartient au types.
+        </p>
+        <p>Le formulaire n'exécute plus la vérification du nonce.</p>
+        <p>
+          Réussi a corriger le problème d'exécution en créent une action
+          wordpress
+        </p>
+        <img
+          src="../images/fonction_verification_action.png"
+          alt="Ajout de la fonction de vérification a mon action"
+        />
+        <img
+          src="../images/appel_action_soumission.png"
+          alt="Appel de l'action quand la soumission du formulaire est vérifié"
+        />
+        <pre>wp_verify_nonce</pre>
+        <p>
+          renvoie toujours faux, c'est sûrement moi qui comprends mal comment çà
+          marche a nouveau.
+        </p>
+        <p>
+          C'était vrai: verify nonce nécessite la valeur renvoyé par le nonce,
+          et non son nom comme je le croyais.
+        </p>
+        <img
+          src="../images/code_nonce_fonctionnel.png"
+          alt="code du nonce fonctionnel"
+        />
+        <p>Fonctionnel maintenant.</p>
+        <p>Plus qu'à coder les entrées en elle même.</p>
+        <p>L'affichage est là (en partie).</p>
+        <img
+          src="../images/affichage_initial_form_prix.png"
+          alt="affichage initial formulaire prix"
+        />
+        <p>
+          Après avoir copier l'affichage de la page qui utilise l'api settings
+        </p>
+        <img
+          src="../images/code_affichage_form_prix.png"
+          alt="code de l'affichage du formulaire"
+        />
+        <img
+          src="../images/affichage_amelioré_form_prix.png"
+          alt="Affichage amélioré du formulaire des prix"
+        />
+        <p>C'est bien plus lisible.</p>
+        <p>
+          Je voudrais faire que 2 post s'affiche dans une seul rangé, il
+          suffirait d'insérer le prochain post entre les éléments tr, mais on ne
+          peut pas insérer de post qui n'existe pas donc il faut aussi vérifier
+          que le post demandé existe bien.
+        </p>
+        <p>
+          Je pense que je vais d'abord travailler sur la sauvegarde puis
+          regarder pour les rangés.
+        </p>
+        <p>
+          Donc: Séparation des posts par types > sauvegarde du formulaire >
+          affichage 2 postes par rangés.
+        </p>
       </section>
     </main>
   </body>
