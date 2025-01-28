@@ -16,63 +16,66 @@
     <main>
       <section>
         <h2>Le script</h2>
-        <pre class="raw-code">
-    const ROOT = location.pathname.match(/.*(?&lt; root &gt;rapport-stage)/)[0];
-    const IsLOCAL = location.protocol == 'file:';
-    let nav = document.querySelector('nav.pages');
+        <pre class="js-code">
+    <span class="syntax-purple">const</span> ROOT = location.pathname.<span class="syntax-blue">match</span>(/.*(?&lt; root &gt;rapport-stage)/)[0];
+    <span class="syntax-purple">const</span> IsLOCAL = location.protocol == 'file:';
+    <span class="syntax-purple">let</span> nav = document.<span class="syntax-blue">querySelector</span>('nav.pages');
 
 
-    class <span class="class">Anchor</span> {
+    <span class="syntax-purple">class</span> <span class="syntax-yellow">Anchor</span> {
         /**
         * 
-        * @param {string} name Nom de l'élement dans le DOM
-        * @param {string} text Text affiché sur la page
-        * @param {string} href Chemin relatif depuis le répertoire racine du portfolio
+        * @<span class="syntax-purple">param</span> {<span class="syntax-yellow">string</span>} name <span class="syntax-grey">Nom de l'élement dans le DOM</span>
+        * @<span class="syntax-purple">param</span> {<span class="syntax-yellow">string</span>} text <span class="syntax-grey">Text affiché sur la page</span>
+        * @<span class="syntax-purple">param</span> {<span class="syntax-yellow">string</span>} href <span class="syntax-grey">Chemin relatif depuis le répertoire racine du portfolio</span>
         */
-        constructor(name, text, href) {
-            this.name = name;
-            this.text = text;
-            this.href = href;
+        <span class="syntax-purple">constructor</span>(name, text, href) {
+            <span class="syntax-cyan">this</span>.name = name;
+            <span class="syntax-cyan">this</span>.text = text;
+            <span class="syntax-cyan">this</span>.href = href;
         }
         /**
         * 
-        * @returns {Element} L'élément &lt;a &gt; affiché dans la page
+        * @<span class="syntax-purple">returns</span> {<span class="syntax-yellow">Element</span>} L'élément &lt;a &gt; affiché dans la page
         */
-        createElement() {
-            let a = document.createElement("a");
-            a.className = this.name;
-            a.innerText = this.text;
-            let div = this.getPathDiv();
-            a.href = this.makeLink(this.href, div);
-            return a;
+        <span class="syntax-blue">createElement</span>() {
+            <span class="syntax-purple">let</span> a = document.<span class="syntax-blue">createElement</span>("a");
+            a.className = <span class="syntax-cyan">this</span>.name;
+            a.innerText = <span class="syntax-cyan">this</span>.text;
+            <span class="syntax-purple">let</span> div = <span class="syntax-cyan">this</span>.<span class="syntax-blue">getPathDiv</span>();
+            a.href = <span class="syntax-cyan">this</span>.<span class="syntax-blue">makeLink</span>(<span class="syntax-cyan">this</span>.href, div);
+            <span class="syntax-cyan">return</span> a;
 
         }
         /**
         * 
-        * @returns string le séparateur d'arborescence
+        * @<span class="syntax-purple">returns</span> string le séparateur d'arborescence
         */
-        getPathDiv() {
-            let div = '';
-            if (IsLOCAL)
+        <span class="syntax-blue">getPathDiv</span>() {
+            <span class="syntax-purple">let</span> div = '';
+            <span class="syntax-cyan">if</span> (IsLOCAL)
             div = '/';
-            else
+            <span class="syntax-cyan">else</span>
             div = `\u005c`;
-            return div;
+            <span class="syntax-cyan">return</span> div;
         }
-        makeLink(url, repoDiv) {
+        <span class="syntax-blue">makeLink</span>(url, repoDiv) {
             return ROOT + repoDiv + url;
         };
     }
-    const pages = [
-        new Anchor('index', 'Page d\'introduction', 'index.html'),
-        new Anchor('artimbale', 'Introduction artimbale', 'artimbale.html'),
-        new Anchor('rapports', 'Rapport hebdomadaire', 'rapports/main.html'),
-        new Anchor('scripts', 'Scripts crée pour le rapport de stage', 'scripts/script.html')
+    <span class="syntax-purple">const</span> pages = [
+        <span class="syntax-cyan">new</span> <span class="syntax-yellow">Anchor</span>('index', 'Page d\'introduction', 'index.html'),
+        <span class="syntax-cyan">new</span> <span class="syntax-yellow">Anchor</span>('artimbale', 'Introduction artimbale', 'artimbale.html'),
+        <span class="syntax-cyan">new</span> <span class="syntax-yellow">Anchor</span>('rapports', 'Rapport hebdomadaire', 'rapports/main.html'),
+        <span class="syntax-cyan">new</span> <span class="syntax-yellow">Anchor</span>('scripts', 'Scripts crée pour le rapport de stage', 'scripts/script.html')
     ]
-    pages.forEach(object => { nav.append(object.createElement()); }
+    pages.<span class="syntax-blue">forEach</span>(object => { nav.<span class="syntax-blue">append</span>(object.<span class="syntax-blue">createElement</span>()); }
     );
-                </pre
-        >
+                </pre>
+                <ul>A ajouter:
+                  <li>Plus de colorage de syntaxe</li>
+                  <li>Explication du script</li>
+                </ul>
       </section>
     </main>
   </body>

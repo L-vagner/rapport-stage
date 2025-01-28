@@ -54,11 +54,31 @@ p {
   margin-block-start: 0;
 }
 
-.raw-code {
+.js-code {
   background-color: #000;
   color: #fff;
 
-  .class {
+  .syntax-yellow {
     color: #dada33;
+  }
+
+  .syntax-purple
+  {
+    color:#b551d3;
+  }
+
+  .syntax-blue
+  {
+    color:#3763db;
+  }
+
+  .syntax-cyan
+  {
+    color:#00ccff;
+  }
+
+  .syntax-grey
+  {
+    color:#666666;
   }
 }
