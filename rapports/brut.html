@@ -956,6 +956,480 @@
           affichage 2 postes par rangés.
         </p>
       </section>
+      <section>
+        <time datetime="01-29">29/01/2025</time>
+        <p>Création d'une fonction pour trier les postes par types :</p>
+        <img src="../images/29-01_01.png" alt="fonction de trie de postes" />
+        <p>
+          Wordpress m'empêche d'avoir une table dans une autre, donc faire des
+          affichages par table, même si utile, n'est pas très personnalisable.
+        </p>
+        <p>Ajout d'une fiche css dans le code principal.</p>
+        <img
+          src="../images/29-01_02.png"
+          alt="Ajout de fiche de style dans les scripts"
+        />
+        <p>
+          Ne fonctionne pas, et ça ne semble vraiment pas être une erreur de ma
+          part, on adore wordpress !
+        </p>
+        <p>
+          Wordpress adore avoir des noms de fonctions pas claire, dans notre
+          cas, wp_enqueue…. S'execute uniquement pour les pages publics, il faut
+          donc utiliser la version admin du hook ( admin_enqueue….)
+        </p>
+        <img
+          src="../images/29-01_03.png"
+          alt="fonction ajusté pour correspondre au demandes de wordpress"
+        />
+        <p>Fonctionnel.</p>
+        <img
+          src="../images/29-01_04.png"
+          alt="démonstration du fonctionnement"
+        />
+        <p>On peut spécifier la page avec ce hook</p>
+        <img src="../images/29-01_05.png" alt="nouveau hook utilisé" />
+        <p>Je déplace donc le script d'activation dans la class WPSP_Prix</p>
+        <img
+          src="../images/29-01_06.png"
+          alt="code d'ajout de la fiche de style intégré a la classe"
+        />
+        <p>
+          Wordpress n'a pas subitement explosé, car sa fonctionne comme décrit
+          sans nuance (pour 1 fois).
+        </p>
+        <p>Il suffit plus qu'a rajouter la mise en page désirée.</p>
+        <p>Je voudrais quelque chose comme çà :</p>
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">Type</th>
+              <th>Label</th>
+              <th>Input</th>
+            </tr>
+            <tr>
+              <th>Label</th>
+              <th>Input</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th rowspan="2">Type</th>
+              <th>Label</th>
+              <th>Input</th>
+            </tr>
+            <tr>
+              <th>Label</th>
+              <th>Input</th>
+            </tr>
+          </tbody>
+        </table>
+        <p>Je pense pouvoir faire quelque chose de similaire avec un foreach</p>
+        <p>Après un peu de débrouillardisme, j'ai ces règles css suivantes</p>
+        <img src="../images/29-01_07.png" alt="règles css crée" />
+        <p>Qui donne cette affichage :</p>
+        <img
+          src="../images/29-01_08.png"
+          alt="Affichage de la page de prix après l'application du css"
+        />
+        <p>
+          Il faut maintenant récupérer les prix pour les sauvegarder dans la
+          base de données.
+        </p>
+        <p>J'ai récupérer les valeurs, plus qu'à les traiter.</p>
+        <p>
+          Je ne garde pas les valeurs nul ou qui ne seront pas sauvegardé dans
+          la base de données.
+        </p>
+        <img
+          src="../images/29-01_09.png"
+          alt="Script de sanitisation des valeurs"
+        />
+        <p>Je convertit aussi les valeurs en double.</p>
+        <img
+          src="../images/29-01_10.png"
+          alt="fonction de sauvegarde des données dans ma bdd"
+        />
+        <p>Sauvegarde des données.</p>
+        <img
+          src="../images/29-01_11.png"
+          alt="entrée de données dans le formulaire"
+        />
+        <img
+          src="../images/29-01_12.png"
+          alt="les données sont sauvegardé dans la bdd"
+        />
+        <p>Plus qu'a mettre automatiquement les valeurs dans le formulaire.</p>
+        <p>Suffit de récupérer les prix en fonctions de l'id du post.</p>
+        <p>
+          Je vais enregistrer ma table custom dans la classe WPSP Admin qui
+          s'occupe de la communication entre le site et la bdd pour mon plugin,
+          puis créer une fonction qui accepte une id et retourne une valeur (le
+          prix déjà assigné).
+        </p>
+      </section>
+      <section>
+        <time datetime="01-30">30/01/2025</time>
+        <p>Découverte de la fonction array_column grâce a stack overflow</p>
+        <p>Elle permet de grandement simplifier ma table.</p>
+        <p>Avant :</p>
+        <img
+          src="../images/30-01_01.png"
+          alt="Table avant utilisation de array column"
+        />
+        <p>Après :</p>
+        <img
+          src="../images/30-01_02.png"
+          alt="Table après utilisation de array column"
+        />
+        <p>
+          Ajout d 'un message d 'avertissement si la sauvegarde échoue quelque
+          part
+        </p>
+        <img src="../images/30-01_03.png" alt="Ajout test de sauvegarde" />
+        <p>$success est déclare vrai plus haut dans la fonction (save_prix).</p>
+        <p>Message de succès ou avertissement</p>
+        <img
+          src="../images/30-01_04.png"
+          alt="Fonction message d'avertissement"
+        />
+        <p>Ce qui donne :</p>
+        <img src="../images/30-01_05.png" alt="Message d'avertissement" />
+        <p>L 'affichage d 'erreur sera compliqué a tester.</p>
+        <p>
+          Une recherche dans le
+          <a href="https://developer.wordpress.org/plugins/shortcodes/"
+            >plugin handbook</a
+          >
+          pour comment créer des shortcode.
+        </p>
+        <p>Affichage par types / categorie des prixs.</p>
+        <p>Tentative de shortcode :</p>
+        <img src="../images/30-01_06.png" alt="Shortcode initial" />
+        <p>
+          Complication avec les namespace (je savais que ça allez revenir pour m
+          'agacer).
+        </p>
+        <p>
+          Le mot public est réservé, donc impossible d 'avoir un namespace
+          appelé public (ou bien finir en public), en changeant le namespace,
+          tout fonctionne.
+        </p>
+        <p>
+          Les patterns que j 'ai crée renvoie une “erreur”, un autre défaillance
+          de wordpress car je n 'ai pas suivi leur 15 livres pour créer un bloc
+          spécifique pour un pattern spécifique pour 1 seul utilisation.
+        </p>
+        <p>Après 1 heure, finalement réussi a “Corriger” mon “erreur”</p>
+        <p>
+          Une solution a été trouvé : Il faut coder en dur le contenu pour ne
+          pas avoir “erreur” dans le coté admin (tout les erreurs sont
+          uniquement en admin.), le problème étant qu 'on ne peut pas modifier l
+          'affichage.
+        </p>
+        <p>GitHub est hors service (15h33).</p>
+        <p>
+          Après une heure, plusieurs forum stack overflow, j 'ai réussi a
+          enlever tout les erreurs dans le menu d 'editeur, plus qu 'à repeter
+          pour l 'autre pattern.
+        </p>
+        <p>
+          Plus d 'affichage « block content is invalid or unexpected » dans l
+          'editeur admin
+        </p>
+        <p>🥳🥳🥳</p>
+        <img src="../images/30-01_07.png" alt="Affichage admin correct" />
+        <p>Merci, developer console</p>
+        <p>Je peut maintenant continuer ce que je faisait, les shortcodes.</p>
+        <p>Shortcode de test fonctionne.</p>
+        <img src="../images/30-01_08.png" alt="Shortcode marche" />
+        <p>
+          Le shortcode n 'a pas de style spécifique… A voir pour la mise en page
+          demain.
+        </p>
+        <p>
+          Après lecture dans le handbook, création d 'un enclosing shortcode
+          (shortcode qui manipule les données a l 'intérieur).
+        </p>
+        <p>Je vais faire que le contenu a l 'intérieur soit aqua blue.</p>
+        <p>Juste pour debug.</p>
+        <img
+          src="../images/30-01_09.png"
+          alt="Le shortcode est maintenant enclosing"
+        />
+        <p>Fonctionne</p>
+        <img
+          src="../images/30-01_10.png"
+          alt="Shortcode manipule les données qu'il enclose"
+        />
+        <p>
+          Il faudrait que je commence a penser comment tout mettre en place mais
+          je suis déjà mentalement épuisé ?
+        </p>
+        <p>J 'ai envie de m 'endormir.</p>
+        <p>
+          Je pense que je récupère tout les valeurs de ma table et crée un
+          affichage avec.
+        </p>
+        <p>
+          Je pense qu 'il serait aussi intelligent d 'ajouter le type de post a
+          ma table afin de pouvoir déterminer les données à récuperer en une
+          seule requette
+        </p>
+        <pre>select * from ma_table where post_type = post_desirée</pre>
+        <p>
+          Ou bien tout simplement faire une jointure (surement plus simple et
+          évite de créer des doublets)
+        </p>
+        <p>
+          J 'ajouterai un trigger sur la table post pour supprimer un prix quand
+          un post est supprimé.
+        </p>
+      </section>
+      <section>
+        <time datetime="01-31">31/01/2025</time>
+        <p>Test de trigger. Pas les droits</p>
+        <p>
+          Après un recherche rapide, il semble que l'ajout de trigger ne soit
+          pas garantie dans l'environnement, au lieu de tester, je vais
+          simplement crée une fonction qui se lance a chaque fois que la page de
+          prix est ouvert et qui supprime une valeur si l'id associée n'existe
+          plus dans la table posts
+        </p>
+        <pre>
+          $mesprix
+          pour chaque $prix de $mesprix
+          si ..._Posts.ID n'existe pas
+          Supprimer $prix de ..._MaTable.
+        </pre>
+        <p>Création de la fonction.</p>
+        <img
+          src="../images/31-01_01.png"
+          alt="Fonction pour enlever les prix qui n'ont plus de post associée"
+        />
+        <p>Utilise deux nouvelle fonctions dans WPSP_Admin.</p>
+        <img
+          src="../images/31-01_02.png"
+          alt="Fonction qui obtient tout les types postes associées au plugin (post ou autre type custom)"
+        />
+        <p>Et</p>
+        <img
+          src="../images/31-01_03.png"
+          alt="fonction qui supprime des valeurs dans la base de données"
+        />
+        <p>Retour a la création de shortcode.</p>
+        <p>
+          Je vais d'abord m'occuper de l'affichage avec des valeurs codé en dur
+          puis je m'occuperai de l'importation des données, raison : je n'ai pas
+          envie d'y réfléchir pour le moment.
+        </p>
+        <p>
+          Crée une table, mais sûrement pas ce qui était attendu, je demanderai
+          a Ludivine.
+        </p>
+        <img
+          src="../images/31-01_04.png"
+          alt="Table d'affichage du shortcode"
+        />
+        <p>
+          Récupération des valeurs réussi, la création de la table manquent.
+        </p>
+        <p>Prototype :</p>
+        <img src="../images/31-01_05.png" alt="Prototype du shortcode" />
+        <p>
+          Possiblement faire une colonne par catégorie et crée des catégories
+          spécial pour le thème.
+        </p>
+        <p>
+          Cherche comment ajouter un formulaire sur l'éditeur pour l'ajout de
+          catégorie, comme celui déjà en place pour post.
+        </p>
+        <img
+          src="../images/31-01_06.png"
+          alt="Affichage de base pour les catégories dans les posts wordpress"
+        />
+        <p>
+          Je n'arrive pas a trouver comment le faire, tout les ressources qui
+          ressort dans les premiers sur l'engin de recherche dit de créer et
+          assigner les catégorie a travers le panneau admin, et il me semble que
+          personne explique comment le faire pour les types custom.
+        </p>
+        <p>
+          Je pourrais supprimer des lignes du code de création de catégorie
+          jusqu'à par élimination trouvé celles qui est utilisé pour faire
+          l'affichage.
+        </p>
+        <p>
+          Vraiment trop compliqué a trouver et je n'ai pas du temps illimité a
+          perdre.
+        </p>
+        <p>Donc, création et test de catégorie grâce a l'affichage maître.</p>
+      </section>
+      <section>
+        <time datetime="02-03">03/02/2025</time>
+        <p>
+          Modification de la query pour récupérer les catégories associées au
+          posts avec un prix sauvegardé, il serait peut être plus simple de
+          faire une autre query ?
+        </p>
+        <p>
+          Après m'être rappeler de fonctions php, création d'une table qui
+          contient les catégories (terms) des posts qui ont un prix, sans
+          duplication.
+        </p>
+        <img
+          src="../images/03-02_01.png"
+          alt="script qui génére une table avec la colonne name de la query"
+        />
+        <p>
+          Je récupére la colonne name de la table de posts, puis supprime tout
+          les dupliqué.
+        </p>
+        <p>Le print de débug affiche que le résultat est bien celui attendu.</p>
+        <img src="../images/03-02_02.png" alt="print de débug" />
+        <p>La table a 2 valeurs, « » (ou NULL) et « Boissons chaudes »</p>
+        <p>
+          Comme les terms sont ordonnées par nom dans la query, on sait aussi
+          que
+        </p>
+        <ul>
+          <li>3 posts ont aucun terms (ie, aucune catégories)</li>
+          <li>Au moins 1 post a la catégorie boissons chaudes</li>
+        </ul>
+        <p>
+          Si on ajoutait une valeur de test dans la table avant de supprimer les
+          doublons, on pourrait aussi déterminer le nombre de posts qui ont la
+          catégorie boissons chaudes (ou bien la dernière catégorie récupérer
+          par la query)
+        </p>
+        <p>En rajoutant un valeur non null, comme un espace, on obtient :</p>
+        <img src="../images/03-02_03.png" alt="print de débug" />
+        <p>
+          On sait donc que la catégorie Boissons chaudes est assigné a 3 posts
+          car 6 - 3 = 3
+        </p>
+        <p>A quoi tout cela sert ?</p>
+        <p>Aucune idée.</p>
+        <p>
+          Après plus de réflexion et moins de code inutile, rappelé de la
+          fonction principal de array_column, qui permet de récupérer des
+          valeurs d'une table est les assigner a un autre table, tout en
+          choisissant quelle valeurs utilisé pour l'index.
+        </p>
+        <p>
+          Ainsi j'ai maintenant
+          <img
+            src="../images/03-02_04.png"
+            alt="print de débug, une table avec les différents terms et id de posts y sont contenu"
+          />
+        </p>
+        <p>Ce qui est bien plus facile a utiliser mais on peut faire mieux</p>
+        <img
+          src="../images/03-02_05.png"
+          alt="print de débug, la table est maintenant associative avec les terms  comme clées"
+        />
+        <p>
+          Et voila, ceci est bien plus utile car on peut itérer chaque term avec
+          un foreach puis chaque post par un for i
+        </p>
+        <p>
+          Une application concret de cela serait de créer un table d'affichage
+          qui crée une entête pour chaque section puis les peupler avec les
+          postes qui ont le même term que l'entête de la section.
+        </p>
+        <p>
+          Un petit conflit que j'ai trouvé intéressant a noté dans ce journal de
+          bord :
+        </p>
+        <p>
+          les variables utilisé pour les foreach sont assigné sur tout
+          l'échelle, donc utiliser le nom d'une variable déjà utilisé supprime
+          ça valeur, on peut facilement éviter çà en changeant le nom de la
+          variable.
+        </p>
+        <img src="../images/03-02_06.png" alt="petit bug intéressant 1" />
+        <p>
+          $posts est déjà assigné plus haut dans le code, donc mon code plus bas
+          ne fonctionne pas comme prévu
+        </p>
+        <img src="../images/03-02_07.png" alt="petit bug intéressant 2" />
+        <p>
+          Car il va maintenant itérer sur les valeurs récupérer dans la boucle
+          précédentes.
+        </p>
+        <p>Bloqué, je vais écrire pour laisser mon cerveaux reflechir.</p>
+        <p>
+          Mon problème : Je voudrais ajouter mes valeurs dans le tableau en
+          fonction de la catégorie mais je n'ai que l'id des posts dans ma table
+          de catégorie, récuperer les valeurs des posts ne devrait pas être trop
+          compliqué mais la manière dont je veut le faire, je n'en suis pas sur.
+        </p>
+        <p>
+          Je pourrais faire un array merge, cela m'a l'air le plus simple mais
+          nécessiterait d'itérer sur les 2 tables, ce qui pourrait être plus
+          lent que nécessaire ?
+        </p>
+        <p>
+          Il ne serait aussi pas utile d'avoir la table de posts si je garde
+          toutes les informations dans la table de catégories.
+        </p>
+        <p>
+          Après reflexion, je pense pouvoir utilisé les clées de la table de
+          term pour faire une logique, par exemple, je mets un valeur = a une
+          des clées, puis quand je peuple ma table (&lt;table&gt; html) je
+          verifie si la valeur vaut une valeur spécifique, et si c'est le cas
+          alors je fais quelque chose spécifique.
+        </p>
+        <p>
+          Le pointeur d'une table peut être modifier par la fonction next, mais
+          n'est pas automatiquement appelé lors d'une boucle, après cette
+          réalisation, correction du code d'affichage.
+        </p>
+        <img
+          src="../images/03-02_08.png"
+          alt="script d'affichage par ligne de 2 postes"
+        />
+        <p>
+          L'affichage par catégorie n'est pas encore codé mais la variable
+          last_of_row devrait être simple a réutiliser une fois qu'une logique
+          me vient.
+        </p>
+        <p>
+          Il faudrait aussi que je prévois une page pour la modification de la
+          mise en page de la fiche par défaut, et donc un récupération et mise
+          en place des options sauvegardé.
+        </p>
+        <p>
+          Décidé de créer une fonction appart pour générer une table utilisable
+          plus tard.
+        </p>
+        <img src="../images/03-02_09.png" alt="print de débug, la table associative contient maintenat les termes et les postes" />
+        <p>
+          La génération de cette table ne requiert uniquement la table de posts.
+        </p>
+        <p>
+          Je n'ai aussi plus besoin de la fonction array column car je peut
+          juste utiliser array keys sur cette table.
+        </p>
+        <img src="../images/03-02_10.png" alt="script, récupération des termes dans la variable terms" />
+        <p>
+          L'affichage est presque complet, seul problème, les td ne s'affichent
+          pas comme espéré ?
+        </p>
+        <p>
+          Il se chevauche verticalement au lieu de horizontalement, trouvé assez
+          rapidement que l'erreur vient de classe que j'ai rajoute
+          (nested-table), car en mettant le display du td en table, l'affichage
+          se brisait.
+        </p>
+        <p>J'enlève donc la classe.</p>
+        <p>
+          L'affichage n'est pas du plus beau mais il fonctionne plus comme prévu
+          initialement.
+        </p>
+        <img src="../images/03-02_11.png" alt="Affichage basique du shortcode" />
+        <p>(Décaféiné, Cappuccino et Moccacino n'ont pas de catégories).</p>
+      </section>
     </main>
   </body>
 </html>
