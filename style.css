@@ -1,5 +1,6 @@
 :root {
   --def-padding: 2.5vh 2.5vw;
+  --border: solid #add8e6 2px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -18,7 +19,6 @@ main {
 
   section {
     padding-block: 1.5rem;
-    --border: solid #add8e6 2px;
     border-inline: var(--border);
     border-block-start: var(--border);
     padding-inline: 1.2rem;
@@ -36,6 +36,11 @@ main {
       max-width: 65vw;
     }
   }
+}
+
+main.brut section:nth-child(5n) {
+  border-block-end: var(--border);
+  margin-block-end: 16rem;
 }
 
 nav.pages {
@@ -62,23 +67,27 @@ p {
     color: #dada33;
   }
 
-  .syntax-purple
-  {
-    color:#b551d3;
+  .syntax-purple {
+    color: #b551d3;
   }
 
-  .syntax-blue
-  {
-    color:#3763db;
+  .syntax-blue {
+    color: #3763db;
   }
 
-  .syntax-cyan
-  {
-    color:#00ccff;
+  .syntax-cyan {
+    color: #00ccff;
   }
 
-  .syntax-grey
-  {
-    color:#666666;
+  .syntax-grey {
+    color: #666666;
+  }
+}
+
+li ul {
+  list-style-type: none;
+  padding-block: 10px;
+  li{
+    padding-block: 4px;
   }
 }
