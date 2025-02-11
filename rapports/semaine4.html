@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rapport Ludovic Vagner</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../scripts/nav.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h2>Rapport de stage, Ludovic Vagner</h2>
+    </header>
+    <nav class="pages"></nav>
+    <main>
+      <h2>Rapport semaine 4</h2>
+      <p>
+        J'ai travaillé surtout sur la page d'options du plugin et la page de
+        prix pendant cette semaine
+      </p>
+
+      <ul>
+        <li>
+          Finalisation de la sauvegarde des options, je me suis trompé dans le
+          nom d'une option et donc la sauvegarde ne s'effectuait pas
+        </li>
+        <li>
+          Je contourne un peu le fonctionnement de WordPress, car je n'ai pas
+          réussi à faire passer les paramètres du formulaire à la fonction
+          d'assainissement recommandé par la documentation
+          <ul>
+            <li>
+              Donc j'enregistre les valeurs et les envois à ma propre fonction
+              d'assainissement
+            </li>
+            <li>
+              J'assainis la devise avec une vérification de la longueur du texte
+            </li>
+          </ul>
+        </li>
+        <li>
+          J'ajoute du style et du texte à la page d'options pour améliorer la
+          visibilité et la compréhension
+        </li>
+        <li>
+          Le menu des prix n'apparaît pas, car il est sous-menu du menu des
+          options, qui a des permissions nécessaires plus élevées. Je fait donc
+          que les prix soit le menu et les options le sous-menu
+        </li>
+        <li>
+          Je crée ma propre page pour le menu des prix, utiliser les fonctions
+          WordPress enregistrerai les données dans la table d'option, ce que je
+          ne veux pas
+          <ul>
+            <li>
+              J'ajoute un nonce "number once", une mesure pour empêcher les
+              attaques externes, elle n'offre pas un protection complete, mais
+              empêche déjà des attaques de bas niveau
+            </li>
+            <li>
+              C'est une fonction déjà implémentée par WordPress, il suffit de la
+              générer à la création du formulaire et de la vérifier à la
+              soumission
+            </li>
+            <li>
+              Petit problème, le code vérifie le nonce avant qu'il ne soit
+              généré : je ne soumets pas le formulaire, mais le nonce est tout
+              de même vérifié, ce qui ferme la page à cause d'un faux positif
+            </li>
+            <li>
+              <p>
+                Je me trompe aussi rapidement sur les paramètres de la fonction
+              </p>
+            </li>
+            <li>
+              Je récupère ensuite les postes des types activés et itère sur ceux
+              pour générer un affichage dynamique
+            </li>
+            <li>
+              L'affichage contient toutes les valeurs sur la même ligne (avec
+              coupure de ligne quand le texte dépasse), je copie le code des
+              entrées sur la page d'option et l'affichage s'améliore
+            </li>
+            <li><p>J'ajoute du style pour la page des prix</p></li>
+            <li>
+              Comme c'est ma page personnalisée, il faut aussi que j'ajoute mes
+              fonctions d'assainissement personnalisé
+            </li>
+            <li>
+              Une fois que j'ai assaini les valeurs, je les sauvegarde dans la
+              table du plugin
+            </li>
+          </ul>
+        </li>
+        <li>
+          Je découvre des nouvelles fonctions qui me permettent de mieux
+          développer, en simplifiant des opérations et aidant dans le débogage
+        </li>
+        <li>
+          <p>
+            Je corrige les erreurs qui apparaissent dans l'éditeur de bloc pour
+            les patterns, elle venait d'une écriture pas assez précise dans le
+            code du pattern
+          </p>
+        </li>
+        <li>
+          Je crée un shortcode, une balise WordPress qui permet d'insérer du
+          code dans une page grâce a un bloc
+          <ul>
+            <li>
+              Ce shortcode sera utilisé pour créer et afficher le menu des prix
+              dans la page où il est inséré
+            </li>
+            <li>
+              Je crée une table pour les prix avec chaque poste divisé par leur
+              catégorie
+            </li>
+          </ul>
+        </li>
+        <li>
+          En réfléchissant comment enlever les valeurs non-existantes de ma
+          table, c.a.d les prix pour lesquels l'ID de post n'existe plus dans la
+          base de données
+          <ul>
+            <li>
+              Je décide d'utiliser les triggers, mais après avoir reçu une
+              erreur, recherche sur le net est comprends que les triggers
+              peuvent être désactivé de base
+            </li>
+            <li>
+              Je crée donc une fonction qui vérifie si l'ID d'un prix existe
+              dans la table des posts, et si ce n'est pas le cas, le supprime de
+              la base de données
+            </li>
+          </ul>
+        </li>
+        <li>
+          Je regarde pour ajouter des catégories aux types de postes du thème,
+          mais ne trouve pas comment répliquer l'affichage présent sur les types
+          normaux de WordPress
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
