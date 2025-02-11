@@ -1,26 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rapport Ludovic Vagner</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css" />
     <script src="../scripts/nav.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h2>
-            Rapport de stage, Ludovic Vagner
-        </h2>
+      <h2>Rapport de stage, Ludovic Vagner</h2>
     </header>
-    <nav class="pages">
-    </nav>
+    <nav class="pages"></nav>
     <main>
-        
+      <h2>Rapport semaine 3</h2>
+      <p>
+        Cette semaine, j'ai travaillé principalement sur la sauvegarde des
+        paramètres du plugin
+      </p>
+      <ul>
+        <li>
+          Travail sur le portfolio, après avoir reçu un mail qui nous demandait
+          d'envoyer un lien avant la fin de la semaine
+        </li>
+        <li>
+          Je tente d'utiliser la documentation du block editor, mais je
+          comprends rapidement que c'est trop spécifique pour mes utilisations
+        </li>
+        <li>
+          Je crée un pattern qui utilise le loop WordPress pour créer un
+          affichage dynamique des postes
+        </li>
+        <li>
+          Travail sur les paramètres du plugin
+          <ul>
+            <li>
+              J'ajoute une table dans la base de données pour sauvegarder les
+              valeurs de mon plugin
+            </li>
+            <li>
+              <p>
+                Je lis de la documentation MySQL pour m'assurer que le charset
+                soit identique
+              </p>
+            </li>
+            <li>
+              Je rencontre des problèmes lors de l'utilisation de certains
+              fichiers à cause du
+              <pre style="display: inline">NAMESPACE</pre>
+            </li>
+            <li>
+              Je crée une option dans la base de données avec le plugin, j'ai
+              beaucoup de problèmes avec les pages d'options
+            </li>
+            <li>
+              Cela est à cause du nom de la fonction utilisé qui me fait croire
+              qu'on demande une valeur spécifique alors que ce n'est pas le cas
+            </li>
+            <li>
+              J'ajoute un mise à jour des valeurs de la page d'options pour
+              montrer aux utilisateurs quelle option est activé
+            </li>
+          </ul>
+        </li>
+      </ul>
     </main>
-
-</body>
-
+  </body>
 </html>
