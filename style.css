@@ -47,6 +47,11 @@ nav.pages {
   display: flex;
   gap: 1em;
   padding: var(--def-padding);
+
+  a::before {
+    content: "·";
+    font-weight: bolder;
+  }
 }
 
 header {
@@ -87,7 +92,7 @@ p {
 li ul {
   list-style-type: none;
   padding-block: 10px;
-  li{
+  li {
     padding-block: 4px;
   }
 }
