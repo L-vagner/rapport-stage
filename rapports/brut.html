@@ -1743,7 +1743,264 @@
       <section>
         <time datetime="02-11">11/02/2025</time>
         <p>Continue travail sur le rapport de stage.</p>
+        <p>
+          A faire : Ajouter une vérification pour désactiver l'affichage de la
+          fiche de prix si le type de post est désactivé.
+        </p>
+        <p>
+          Ajouté agenda en tant que PDF, l'affichage n'est pas uniforme entre
+          les navigateurs et ne s'affiche pas forcement sur les navigateurs
+          téléphone.
+        </p>
+        <p>
+          Solution : Afficher une image et insérer le ficher en dessous sans
+          affichage
+        </p>
+        <p>
+          Ajout de l'image de l'agenda et son fichier dans le pattern agenda.
+        </p>
+        <img src="../images/sem6/02-11_01.png" alt="Code du pattern agenda" />
+        <p>
+          Problèmes avec images dans le tourniquet : Si l'écran est trop petit,
+          l'image dépasse au dessous. <img src="../images/sem6/02-11_02.png" alt="erreur d'affichage du tourniquet" />
+        </p>
       </section>
+
+      <section>
+        <time datetime="02-12">11/02/2025</time>
+        <p>On peut corriger le dépassement avec la règle css overflow:clip.</p>
+        <p>
+          Le problème maintenant est que l'image touche le bord de l'élément
+          conteneur.
+        </p>
+        <img src="../images/sem6/02-12_01.png" alt="Erreur d'affichage corrigé" />
+        <p>
+          C'est un problème car des images plus petites pourrais ne pas toucher
+          le bord et donc la mise en page serait différent.
+        </p>
+        <p>
+          Je pense que je vais enlever le bord et l'arrière plan, car ils
+          servait surtout a avoir une idée de la place de l'image.
+        </p>
+        <p>
+          Après quelque manipulation, je pense que je veux qu'une seul image (et
+          donc post) soit visible pour affichage de téléphone.
+        </p>
+        <p>
+          J'ajoute un taille minimum pour limiter l'affichage a 1 post pour les
+          écrans plus fin.
+        </p>
+        <p>
+          Problème, quand l'index est sauvegardé, l'affichage devient fixe : les
+          tourniquet ne se mettent plus à jour, on peut simplement rajouter le
+          pattern a nouveau mais cela est ennuyant et il est fort probable qu'un
+          oublie s'effectue éventuellement.
+        </p>
+        <p>
+          Je vais essayer d'utiliser template_redirect, hook qui se lance avant
+          l'affichage de la page.
+        </p>
+        <p>
+          Les tests me montre que cela s'affiche avant tout le contenu, donc il
+          faudrait dupliquer le contenu et mettre a jour ce qu'on veux, je ne
+          pense pas que cela sera utilisable
+        </p>
+        <p>
+          Il faut que je choisis entre essayer d'utiliser le query loop bloque a
+          nouveau ou créer un shortcode.
+        </p>
+        <p>
+          J'arrive déjà a utiliser un shortcode, il serait assez simple a créer,
+          je vais donc le faire pour avoir une option de secours puis essayera a
+          utiliser le query loop.
+        </p>
+        <p>
+          Après quelque complications, réussi a recréer un shortcode, il faut
+          sauvegarder une modification de la mise en page pour que l'affichage
+          apparaît sinon seulement le contenu du shortcode apparaît (pour je ne
+          sais quelle raison)
+        </p>
+        <p>fait de même avec le shortcode du plugin.</p>
+        <img src="../images/sem6/02-12_02.png" alt="Shortcode du carousel dans l'éditeur" />
+        <p>
+          Avant j'utilisais do_shortcode, qui avait l'effet secondaire de mettre
+          le contenu du shortcode dans la page editeur, donc quand un sauvegarde
+          est fait on perd la mise à jour automatique car la sauvegarde a des
+          valeurs fixe, a lieu qu'un lien/pointeur vers le shortcode.
+        </p>
+        <p>
+          Il faudrait maintenant ajouter un écran pour modifier l'affichage. A
+          réfléchir.
+        </p>
+        <p>J'ajoute un sous-menu dans apparence.</p>
+        <img src="../images/sem6/02-12_03.png" alt="Sous menu dans le menu apparence" />
+        <p>
+          Ensuite plus qu'à ajouter un affichage pour démontrer ce que les
+          options changent et une demo sur la page
+        </p>
+        <p>
+          J'ai l'affichage de la démo, il faut que j'arrive a mettre a jour le
+          style css des éléments dynamiquement
+        </p>
+        <img src="../images/sem6/02-12_04.png" alt="formulaire de changement de style initiale" />
+        <p>
+          Quelle information pourrait être intéressant a modifier pour mes
+          utilisateurs ?
+        </p>
+        <p>
+          couleur arrière plan, couleur texte, police, espace entre posts… çà
+          l'air plus compliqué que je pensais, demander ce qui est vraiment
+          important de pouvoir sauvegarder.
+        </p>
+        <p>
+          Tente de trouver comment lire un fichier sur WordPress mais j'ai
+          plusieurs complications.
+        </p>
+        <p>
+          Créer un délimiteur dans le fichier CSS, car le lecteur de fichier
+          comprend les commentaires.
+        </p>
+        <p>A regarder pour la manipulation du fichier.</p>
+      </section>
+
+      <section>
+        <time datetime="02-13">13/02/2025</time>
+        <p>Mal dormi, loupé le réveil.</p>
+        <p>
+          Découverte de l'attribut contenteditable pour HTML, Ce qui va
+          grandement simplifier mon formulaire pour la mise en page des
+          tourniquets.
+        </p>
+        <p>
+          J'ai une base pour le formulaire, je voudrais mettre en place la
+          sauvegarde maintenant.
+        </p>
+        <img src="../images/sem6/02-13_01.png" alt="formulaire de changement de style simple" />
+        <p>En train de voir avec Ludivine pour des modifications de la page,</p>
+        <p>Changement de l'ordre de certaines sections.</p>
+        <p>A faire : Tuto pour comment utiliser le site et le plugin.</p>
+        <p>
+          Début de la confirmation pour le formulaire : J'arrive a récupérer le
+          texte modifié dans le post
+        </p>
+        <p>
+          Découverte de plusieurs fonction et concept javascript comme les
+          events et les selections.
+        </p>
+        <p>
+          problème pour l'outil de style : Quand j'appuie sur entrée, il n'y a
+          pas d'insertion de nouvelle ligne, je doit donc coder manuellement la
+          fonctionalité.
+        </p>
+        <p>Grâce a javascript et jQuery, on à :</p>
+        <img src="../images/sem6/02-13_02.png" alt="Script jQuery" />
+        <p>
+          Cette fonction vérifie si l'élément est sélectionné, la sélection est
+          nécessaire pour modifier le contenu de l'élément donc il n'y a pas de
+          risque que le script se lance accidentellement.
+        </p>
+        <p>
+          Ensuite, il vérifie si la touche appuyé est la touche « entré », et si
+          c'est le cas, l'empêche d'effectuer ces comportements de défauts sur
+          cet element (dans notre cas, une nouvelle ligne est ajouté avant
+          l'élément, ce qui le pousse vers le bas), pour finir, on ajoute un
+          caractère de nouvelle ligne « \n » a la position du caret (curseur),
+          puis augment la position du curseur de 1 pour le mettre sur la
+          nouvelle ligne crée.
+        </p>
+        <p>
+          Formater le CSS quand il est sauvegardé peut être intéressant, mais il
+          faut d'abord que j'ajoute la sauvegarde.
+        </p>
+        <p>
+          Après-midi : Ludivine m'a fait regarder le logiciel de caisse, je n'ai
+          pas eu un bon récapitulatif du problème.
+        </p>
+        <p>Leoges nf monosite</p>
+        <p>
+          Problème : Désire de créer un numéro de table pour simplifier la
+          restauration, mais ne sait pas utiliser l'application, et quand on
+          supprime un article d'une commande déjà passé (a l'encaissement par
+          exemple), il est sauvegardé sur le ticket comme ajouté puis supprimé,
+          mais désire d'avoir uniquement les articles sauvegardé sur le ticket
+        </p>
+        <p>
+          Regardé le site de leoges nf, mais il est presque exclusivement
+          composé de vidéo tutoriel et formulaire pour déterminer quelle version
+          de la licence serait la plus avantageuse.
+        </p>
+        <p>Aucune guide écrit.</p>
+        <p>
+          2 options disponible : appeler le support téléphone pour demander une
+          ressource écrit, d'après le témoignage de Ludivine et Gaëlle, le
+          support est incompétent, ou du moins, ne savent pas naviguer
+          l'application, l'autre option est de tester les options, seul problème
+          étant que je ne sais pas comment activer un mode de test dans
+          l'application, ou s'il en existe un pour commencer.
+        </p>
+        <p>
+          Hors du gros problème de support technique et du manque du tutoriel
+          papier (ou lisible), le logiciel a l'air très bien.
+        </p>
+      </section>
+
+      <section>
+        <time datetime="02-14">14/02/2025</time>
+        <p>Regarde les tutos vidéo du logicel.</p>
+        <p>
+          Trouvé comment créer des plans de tables, démonstration rapide avec
+          Gaëlle, mais incomplet, a finir.
+        </p>
+        <p>
+          On peut créer un plan de table spécial avec les tables qu'on désire.
+        </p>
+        <p>
+          Le logiciel et le type de fichier préféré est sweet home 3d (et
+          .sh3d).
+        </p>
+        <p>
+          J'installe et j'essaie de créer une maquette pour la création du plan.
+        </p>
+        <img src="../images/sem6/02-14_01.png" alt="Maquette de la mezannine, fait sur sweet home 3d" />
+        <p>Loin d'être parfait mais suffisant pour commencer.</p>
+        <p>
+          Dépanné l'imprimante avec ij network device setup utility, il fallait
+          connecter l'imprimante par câble pour corriger ses paramètres de
+          connexion.
+        </p>
+        <p>
+          Il a fallu aussi installer une autre application sur l'ordinateur de
+          Ludivine pour installer et mettre à jour les drivers.
+        </p>
+        <p>
+          Pour les règles CSS, il serait intéressant de les mètres dans le
+          presse-papier (et de imprimer sur l'écran pour permettre la copie
+          manuel.
+        </p>
+        <p>Message de succès, plus qu'a coder la sauvegarde.</p>
+      </section>
+
+      <section>
+        <p>
+          Après réflexion, ça va être sûrement dur pour Ludivine ou Gaëlle de
+          modifier les règles css, car elle n'ont pas / peu d'expérience avec,
+          et je ne pense pas pouvoir couvrir tout les demandes avec « l'outil »,
+          qui est juste un éditeur de texte très simple, j'enlève donc l'outil.
+        </p>
+        <p>
+          Changement des permissions des fichiers, j'ai des erreurs, vitement
+          corrigé grâce a un
+          <a href="https://www.malcare.com/blog/wordpress-file-permissions/"
+            >blog</a
+          >, tout fonctionne correctement.
+        </p>
+        <p>Changement rapide de quelques reglès de style.</p>
+        <p>
+          Création d'un tutoriel pour l'utilisation générale de wordPress et du
+          thème / plugin que j'ai crée sous rêquette de Ludivine.
+        </p>
+      </section>
+      
     </main>
   </body>
 </html>
